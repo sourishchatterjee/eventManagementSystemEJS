@@ -15,6 +15,17 @@
             <a href="/admin/allevents" class="text-blue-400 text-sm hover:underline block mb-4">← View All Events</a>
             
             <h1 class="text-xl font-semibold text-center mb-6">Create Event</h1>
+            <% if (success_msg) { %>
+                <div class="bg-green-600 text-white px-4 py-2 rounded mb-4">
+                    <%= success_msg %>
+                </div>
+            <% } %>
+            
+            <% if (error_msg) { %>
+                <div class="bg-red-600 text-white px-4 py-2 rounded mb-4">
+                    <%= error_msg %>
+                </div>
+            <% } %>
             
             <form action="/admin/addevent" method="post" enctype="multipart/form-data" class="flex flex-col gap-4">
                 <input
